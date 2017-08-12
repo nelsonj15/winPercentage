@@ -51,7 +51,7 @@ main ()
     
     
     cout << "Hello, and welcome to Rob Nelson's Win Percentage Entry System. \n\n"
-    "How many teams will we be entering today?";
+    "How many teams will we be entering today?"; // Everytime this prints out you can enter a number, but nothing happens until enter is pressed several times.
     int below_teams;
     cin >> below_teams;
     cin.ignore (numeric_limits < std::streamsize >::max (), '\n');	//This line of code is telling the cin function that there is no limit to the amount of numbers entered, to ignore.
@@ -60,22 +60,22 @@ main ()
     int average_teams;
     cin >> average_teams;
     cin.ignore (numeric_limits < std::streamsize >::max (), '\n');	//This line of code is telling the cin function that there is no limit to the amount of numbers entered, to ignore.
-    avg *info2 = new avg[average_teams];	// pointer for my below average team struct set equal to a new team entry.
+    avg *info2 = new avg[average_teams];	// pointer for my average team struct set equal to a new team entry.
     
     int above_teams;
     cin >> above_teams;
     cin.ignore (numeric_limits < std::streamsize >::max (), '\n');	//This line of code is telling the cin function that there is no limit to the amount of numbers entered, to ignore.
-    aboveAvg *info3 = new aboveAvg[above_teams];	// pointer for my below average team struct set equal to a new team entry.
+    aboveAvg *info3 = new aboveAvg[above_teams];	// pointer for my above average team struct set equal to a new team entry.
     
     for (int i = 0; i < below_teams; i++)	//for loop designed to intake data for user input(i)
     
-    for (int i = 0; i < average_teams; i++)
+    for (int i = 0; i < average_teams; i++) // I think this is where this is breaking!
             
-    for (int i = 0; i <above_teams; i++)
+    for (int i = 0; i <above_teams; i++) // I think this is where this is breaking!
     
     {
 
-            cout << "Enter Team Name: \n";
+            cout << "Enter Team Name: \n"; // if more than one word is entered it sends it into a large loop and weird data is output.
             cin >> info[i].t_name;
             
             cout << "Enter winning percentage: \n";
