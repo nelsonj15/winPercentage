@@ -16,17 +16,17 @@ int main ()
   cout << "***** CSC 301     ************************************************\n";
   cout << "***** Project 5: Team Win Percentage Display *********************\n";
   cout << "******************************************************************\n\n";
-  cout << "Hello, and welcome to Rob Nelson's Win Percentage Entry System.\n\n";
-  cout << "How many teams will we be entering today?";
-  
+
   int teamCount;
   team *teamList = new team[teamCount];
 
+  cout << "Hello, and welcome to Rob Nelson's Win Percentage Entry System.\n\n";
+  cout << "How many teams will we be entering today? ";
   cin >> teamCount;
   // Telling the cin function there is no limit to the amount of numbers entered, to ignore.
   cin.ignore (numeric_limits < std::streamsize >::max (), '\n');
 
-	// For loop designed to intake data for user input(i)
+  // For loop designed to intake data for user input(i)
   for (int i = 0; i < teamCount; i++)
     {
       cout << "Enter Team Name: \n";
