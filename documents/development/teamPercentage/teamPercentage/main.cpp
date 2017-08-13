@@ -26,6 +26,9 @@ main ()
     
     double winPercentage = 0.0;
     int teamCount = 0;
+    int below = 0;
+    int average = 0;
+    int above = 0;
     team *teamList = new team[teamCount];
     
      cout << "Hello, and welcome to Rob Nelson's Win Percentage Entry System.\n\n";
@@ -37,32 +40,55 @@ main ()
     	// For loop designed to intake data for user input(i)
       // For loop designed to intake data for user input(i)
     
-    while (teamList->winPercentage <= .333)
-    {
-        cout << "Below Average Team:" << endl;
-    }
-    
-    while (teamList->winPercentage <= .666)
-    {
-        cout << "Average Team:" << endl;
-    }
-    
-    while (teamList->winPercentage > .666 )
-    {
-        cout << "Average Team:" << endl;
-    }
-    
-
     for (int i = 0; i < teamCount; i++)
     {
         cout << "Enter Team Name: \n";
         getline (cin, teamList[i].teamName);
-        
+        cin.ignore();
         cout << "Enter winning percentage: \n";
         cin >> teamList[i].winPercentage;
     }
     
-       cout << "Your Teams Are:" << teamList->teamName << teamList->winPercentage << endl;
+    // Display teams that are Below Average
+    cout <<"Below Average Teams:" << endl;
+    for ( int i= 0; i < teamCount; i++)
+    {
+        if (teamList[i].winPercentage <= .333)
+        {
+            cout << teamList[i].teamName;
+            below = 1;
+        }
+    }
+    if (below == 0)
+        cout << "none\n";
     
+    // Display teams that are Average
+    cout <<"Average Teams:" << endl;
+    for ( int i= 0; i < teamCount; i++)
+    {
+        if (teamList[i].winPercentage <= .666 || teamList[i].winPercentage >= .334)
+        {
+            cout << teamList[i].teamName;
+            average = 1;
+        }
+    }
+    if (average == 0)
+        cout << "none\n";
+    
+    // Display teams that are Above Average
+    cout <<"Above Average Teams:" << endl;
+    for ( int i= 0; i < teamCount; i++)
+    {
+        if (teamList[i].winPercentage >= .667)
+        {
+            cout << teamList[i].teamName;
+            above = 1;
+        }
+    }
+    if (above == 0)
+        cout << "none\n";
+    
+    
+
         return 0;
-}
+    }
