@@ -36,6 +36,23 @@ main ()
     
     	// For loop designed to intake data for user input(i)
       // For loop designed to intake data for user input(i)
+    
+    while (teamList->winPercentage <= .333)
+    {
+        cout << "Below Average Team:" << endl;
+    }
+    
+    while (teamList->winPercentage <= .666)
+    {
+        cout << "Average Team:" << endl;
+    }
+    
+    while (teamList->winPercentage > .666 )
+    {
+        cout << "Average Team:" << endl;
+    }
+    
+
     for (int i = 0; i < teamCount; i++)
     {
         cout << "Enter Team Name: \n";
@@ -44,30 +61,8 @@ main ()
         cout << "Enter winning percentage: \n";
         cin >> teamList[i].winPercentage;
     }
-        // Low Percentage
-        if (winPercentage == 0 || winPercentage < 0.333) {
-        } else if (winPercentage > .33) {
-            cout << "None";
-        }
-        
-        // Average Percentage
-        if (winPercentage == 0.333 || winPercentage <= 0.666) {
-        } else if (winPercentage < .66) {
-            cout << "None";
-        }
-        
-        // High Percentage
-        if (winPercentage == 0.667 || winPercentage > 0.666) {
-        } else if (winPercentage < .66) {
-            cout << "None";
-        }
-        cout << "Here are the teams you have entered: \n";
-        for (int i = 0; i < teamCount; i++)
-        {
-            cout << "Below Average Team:" << (winPercentage == 0.333 || winPercentage < 0.333) << endl;
-            cout << "Average Team:" << (winPercentage == 0.333 || winPercentage <= 0.666) << endl;
-            cout << "Above Average Team:" << (winPercentage == 0.667 || winPercentage > 0.666) << endl;
-        }
-    return 0;
+    
+       cout << "Your Teams Are:" << teamList->teamName << teamList->winPercentage << endl;
+    
+        return 0;
 }
-
